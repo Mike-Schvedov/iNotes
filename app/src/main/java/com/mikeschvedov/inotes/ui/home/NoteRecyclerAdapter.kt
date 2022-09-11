@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.mikeschvedov.inotes.data.database.entities.Note
+import com.mikeschvedov.inotes.utils.tbx_fromUnixToFormatted
 
 
 class NoteRecyclerAdapter (private val listener: OnItemClickListener) : RecyclerView.Adapter<NoteRecyclerAdapter.NotesViewHolder>() {
@@ -57,7 +59,7 @@ class NoteRecyclerAdapter (private val listener: OnItemClickListener) : Recycler
         // --- Setting the image --- //
         holder.content.text = item.content
         // --- Setting the title --- //
-        holder.date.text = item.date
+        holder.date.text = item.date.tbx_fromUnixToFormatted()
 
         // -- Sending the clicked item as callback -- //
         holder.itemLayout.setOnClickListener {

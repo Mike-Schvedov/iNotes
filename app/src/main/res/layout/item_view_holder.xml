@@ -9,20 +9,22 @@
     android:background="@drawable/itemholder_background">
 
 
+
+
     <TextView
         android:id="@+id/content_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/courier_prime_bold_italic"
-        android:gravity="start|center_vertical"
         android:text="content of the note"
+        android:gravity="start|center_vertical"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:fontFamily="@font/courier_prime_bold_italic"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/date_text_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/date_text_view"
@@ -30,7 +32,7 @@
         android:layout_height="wrap_content"
         android:text="20/10/1989"
         android:gravity="start|center_vertical"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
