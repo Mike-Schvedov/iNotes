@@ -1,6 +1,9 @@
 package com.mikeschvedov.inotes.ui.home
 
 import android.app.Dialog
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -18,6 +21,7 @@ import com.mikeschvedov.inotes.NoteRecyclerAdapter
 import com.mikeschvedov.inotes.R
 import com.mikeschvedov.inotes.data.database.entities.Note
 import com.mikeschvedov.inotes.databinding.FragmentFirstBinding
+import com.mikeschvedov.inotes.widgets.NoteListWidget
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -71,6 +75,7 @@ class HomeFragment : Fragment() {
         saveBTN.setOnClickListener {
             homeViewModel.deleteNoteFromDB(clickedNote)
             Toast.makeText(requireContext(), "Note Deleted", Toast.LENGTH_SHORT).show()
+            updateWidget()
             dialog.dismiss()
         }
 
@@ -85,11 +90,24 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         homeViewModel.populateList()
+        updateWidget()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+    private fun updateWidget(){
+        val applicationContext = requireContext().applicationContext
+
+        val intent = Intent(requireContext(), NoteListWidget::class.java)
+        intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+        val ids: IntArray = AppWidgetManager.getInstance(applicationContext)
+            .getAppWidgetIds(ComponentName(applicationContext, NoteListWidget::class.java))
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+        requireContext().sendBroadcast(intent)
+    }
+
 
 }

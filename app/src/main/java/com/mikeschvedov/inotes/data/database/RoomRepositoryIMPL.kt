@@ -9,7 +9,7 @@ class RoomRepositoryIMPL @Inject constructor(private var notesDao: NotesDao) : R
 
    override fun addNote(note: Note) = notesDao.addNote(note)
 
-    override fun getAllNotes() : List<Note> = notesDao.getAllNotes()
+    override suspend fun getAllNotes() : List<Note> = notesDao.getAllNotes()
 
     override fun deleteNote(note: Note) = notesDao.deleteNote(note)
 

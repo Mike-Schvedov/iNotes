@@ -3,11 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/M220/AndroidStudioProjects/iNotes/app/src/main/res/drawable/itemholder_background.xml" value="0.292" />
-        <entry key="..\:/Users/M220/AndroidStudioProjects/iNotes/app/src/main/res/layout/activity_main.xml" value="0.2898148148148148" />
-        <entry key="..\:/Users/M220/AndroidStudioProjects/iNotes/app/src/main/res/layout/fragment_first.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/M220/AndroidStudioProjects/iNotes/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/M220/AndroidStudioProjects/iNotes/app/src/main/res/layout/item_view_holder.xml" value="0.365625" />
+        <entry key="..\:/Users/M220/AndroidStudioProjects/iNotes/app/src/main/res/drawable/widget_background.xml" value="0.15" />
+        <entry key="..\:/Users/M220/AndroidStudioProjects/iNotes/app/src/main/res/layout/fragment_first.xml" value="0.30416666666666664" />
+        <entry key="..\:/Users/M220/AndroidStudioProjects/iNotes/app/src/main/res/layout/item_view_holder.xml" value="0.30416666666666664" />
+        <entry key="..\:/Users/M220/AndroidStudioProjects/iNotes/app/src/main/res/layout/note_list_widget.xml" value="0.5" />
       </map>
     </option>
   </component>

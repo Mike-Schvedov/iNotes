@@ -6,7 +6,7 @@ interface Repository  {
 
     fun addNote(note: Note)
 
-    fun getAllNotes() : List<Note>
+    suspend fun getAllNotes() : List<Note>
 
     fun deleteNote(note: Note)
 
