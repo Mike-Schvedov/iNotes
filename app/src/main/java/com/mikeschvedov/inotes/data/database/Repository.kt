@@ -1,14 +1,13 @@
 package com.mikeschvedov.inotes.data.database
 
-import com.mikeschvedov.inotes.data.database.daos.NotesDao
 import com.mikeschvedov.inotes.data.database.entities.Note
 
-class Repository(private val notesDao: NotesDao) {
+interface Repository  {
 
-    fun addNote(note: Note) = notesDao.addNote(note)
+    fun addNote(note: Note)
 
-    fun getAllNotes() : List<Note> = notesDao.getAllNotes()
+    fun getAllNotes() : List<Note>
 
-    fun deleteNote(note: Note) = notesDao.deleteNote(note)
+    fun deleteNote(note: Note)
 
 }

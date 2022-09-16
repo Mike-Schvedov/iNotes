@@ -1,26 +1,20 @@
 package com.mikeschvedov.inotes.ui.home
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mikeschvedov.inotes.data.database.AppDatabase
 import com.mikeschvedov.inotes.data.database.Repository
 import com.mikeschvedov.inotes.data.database.entities.Note
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel(application: Application) : AndroidViewModel(application){
-
-    private val repository: Repository
-
-    init {
-
-        val userDao = AppDatabase.getDatabase(application).notesDao()
-        repository = Repository(userDao)
-
-    }
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+     private val repository: Repository
+) : ViewModel(){
 
     private val _listOfNotes = MutableLiveData<List<Note>>()
     val listOfNotes: LiveData<List<Note>> get() = _listOfNotes
